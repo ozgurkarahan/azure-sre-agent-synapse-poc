@@ -1,0 +1,74 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors (project-specific configs that contain secrets — IGNORE)
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code runtime state (config files like .claude/CLAUDE.md and .claude/commands/*
+# ARE tracked; only runtime-only state is ignored)
+.claude/cache/
+.claude/sessions/
+.claude/todos/
+.claude/file-history/
+.claude/shell-snapshots/
+.claude/paste-cache/
+.claude/projects/
+.claude/.credentials.json
+.claude/history.jsonl
+.claude/stats-cache.json
+.claude/mcp-needs-auth-cache.json
+
+# Copilot CLI runtime state
+.copilot/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Tasks (internal session tracking)
+tasks/
+
+# Common language ignores (uncomment as needed per project)
+# Python
+# __pycache__/
+# *.py[cod]
+# .venv/
+# .pytest_cache/
+# *.egg-info/
+#
+# Node
+# node_modules/
+# dist/
+# build/
+#
+# .NET
+# bin/
+# obj/
+#
+# Foundry hosted-agent local caches (uncomment if .foundry/ exists)
+# .foundry/datasets/
+# .foundry/evaluators/
+# .foundry/results/
+
+
+# Sandbox-only secrets generated at deploy time
+infra/.synapse-admin-pwd.txt
+infra/.deployment-output.json
+infra/.deployment-outputs.json
+infra/.whatif-output.txt
+
+# Defensive — never commit any of these patterns
+*.pwd.txt
+*-secret.txt
+*-secrets.txt
+*.pem
+*.key
+*.pfx
+azure-config.json
+azureauth.json

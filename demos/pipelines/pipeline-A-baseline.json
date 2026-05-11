@@ -1,0 +1,44 @@
+{
+  "name": "pipeline-A-baseline",
+  "properties": {
+    "description": "Pipeline A - baseline (control). Invokes notebook-A-baseline. Should always SUCCEED.",
+    "activities": [
+      {
+        "name": "RunBaselineNotebook",
+        "type": "SynapseNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.00:30:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "notebook": {
+            "referenceName": "notebook-A-baseline",
+            "type": "NotebookReference"
+          },
+          "sparkPool": {
+            "referenceName": "pooldefault",
+            "type": "BigDataPoolReference"
+          },
+          "executorSize": "Small",
+          "conf": {
+            "spark.dynamicAllocation.enabled": null,
+            "spark.dynamicAllocation.minExecutors": null,
+            "spark.dynamicAllocation.maxExecutors": null
+          },
+          "driverSize": "Small",
+          "numExecutors": 1
+        }
+      }
+    ],
+    "annotations": [
+      "synapse-sre-pilot",
+      "scenario-A",
+      "baseline"
+    ]
+  }
+}

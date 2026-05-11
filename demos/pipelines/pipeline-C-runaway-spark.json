@@ -1,0 +1,40 @@
+{
+  "name": "pipeline-C-runaway-spark",
+  "properties": {
+    "description": "Pipeline C - runaway Spark. Invokes notebook-C-runaway which loops forever. Bounded only by Spark pool auto-pause. Pain Point #2.",
+    "activities": [
+      {
+        "name": "RunRunawayNotebook",
+        "type": "SynapseNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "notebook": {
+            "referenceName": "notebook-C-runaway",
+            "type": "NotebookReference"
+          },
+          "sparkPool": {
+            "referenceName": "pooldefault",
+            "type": "BigDataPoolReference"
+          },
+          "executorSize": "Small",
+          "driverSize": "Small",
+          "numExecutors": 1
+        }
+      }
+    ],
+    "annotations": [
+      "synapse-sre-pilot",
+      "scenario-C",
+      "runaway-spark",
+      "pain-point-2"
+    ]
+  }
+}

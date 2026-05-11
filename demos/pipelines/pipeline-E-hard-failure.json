@@ -1,0 +1,40 @@
+{
+  "name": "pipeline-E-hard-failure",
+  "properties": {
+    "description": "Pipeline E - hard failure. Invokes notebook-E-hard-failure which reads non-existent file. FAILS with AnalysisException. Pain Point #4.",
+    "activities": [
+      {
+        "name": "RunHardFailureNotebook",
+        "type": "SynapseNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.00:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "notebook": {
+            "referenceName": "notebook-E-hard-failure",
+            "type": "NotebookReference"
+          },
+          "sparkPool": {
+            "referenceName": "pooldefault",
+            "type": "BigDataPoolReference"
+          },
+          "executorSize": "Small",
+          "driverSize": "Small",
+          "numExecutors": 1
+        }
+      }
+    ],
+    "annotations": [
+      "synapse-sre-pilot",
+      "scenario-E",
+      "hard-failure",
+      "pain-point-4"
+    ]
+  }
+}

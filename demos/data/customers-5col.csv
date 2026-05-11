@@ -1,0 +1,11 @@
+customer_id,name,email,country,loyalty_tier
+1001,Alice Martin,alice.martin@example.com,FR,Gold
+1002,Bob Schmidt,bob.schmidt@example.de,DE,Silver
+1003,Carlos Lopez,c.lopez@example.es,ES,Bronze
+1004,Dora Vasquez,dora.v@example.com,US,Gold
+1005,Erik Holm,e.holm@example.no,NO,Platinum
+1006,Fatima Khan,f.khan@example.in,IN,Silver
+1007,Gabriel Costa,g.costa@example.pt,PT,Bronze
+1008,Hannah Liu,h.liu@example.cn,CN,Gold
+1009,Ivan Petrov,i.petrov@example.ru,RU,Silver
+1010,Julia Klein,j.klein@example.at,AT,Platinum
